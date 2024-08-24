@@ -1,0 +1,32 @@
+---
+import Navigation from '@/components/Navigation.astro';
+import Footer from '@/components/Footer.astro';
+import { ViewTransitions } from 'astro:transitions';
+import {Sidebar} from '../components/Sidebar'
+import { Header } from '../components/Header';
+import '../styles/global.css';
+
+interface Props {
+    title: string;
+}
+const { title } = Astro.props;
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leeroy Garcia | {title} </title>
+    <ViewTransitions  />
+</head>
+<body class='font-poppins'>
+    <Header client:load/>
+    <!-- <Sidebar client:load /> -->
+    <Sidebar client:load>
+    <Navigation />
+    </Sidebar>
+    <div class='min-h-screen bg-contentBg text-cText mt-[50px] overflow-y-scroll p-5 box-border'>
+         <slot/>
+    </div>
+    <Footer />
+</body>
+</html>

@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import ProfilePicture from '../img/pp.png';
+import Space from '../img/space.png';
+// import Github from '../img/github-svgrepo-com.svg?raw';
+import Github from '../img/github-svgrepo-com.svg?raw';
+import Linkedin from '../img/linkedin-round-svgrepo-com.svg?raw'
+import BaseLayout from "../layouts/BaseLayout.astro";
+const title = 'Home';
+---
+<BaseLayout title={title}>
+	<div class='h-full w-full flex flex-col justify-start items-center p-2 gap-5'>
+		<!-- <div class='flex flex-col justify-center items-center mt-5'>
+			<Image 
+				class='drop-shadow-custom mask-gradient-to-bottom z-1 ta:w-[600px]' 
+				src={ProfilePicture}
+				alt={'Foto de perfil de Leeory Garcia'}
+				widths={[300, 500, 1200]}
+				sizes={`(max-width: 360px) 300px, (max-width: 720px) 500px, (max-width: 1600px) 1200px`}
+				
+			/>
+			<span class='text-4xl font-semibold -m-6 z-10 text-accent'>Leeroy Garcia</span>
+		</div> -->
+
+		<div class="flex flex-col w-[280px] rounded-2xl bg-indigo-950 p-1 shadow-lg divide-y divide-slate-800">
+			<div class="p-2 z-0">
+				<Image 
+					class='drop-shadow-custom mask-gradient-to-bottom z-1 ta:w-[600px] scale-125'  
+					src={ProfilePicture}
+					alt={'Foto de perfil de Leeory Garcia'}
+					widths={[300, 500, 1200]}
+					sizes={`(max-width: 360px) 300px, (max-width: 720px) 500px, (max-width: 1600px) 1200px`}
+					
+				/>
+			</div>
+			<div class="flex flex-col justify-start items-start p-2 gap-2 z-10 bg-indigo-950">
+				<span class="text-cText text-2xl">Leeroy Garcia</span>
+				<span class="text-cText font-extralight text-xs">Full Stack Web Developer</span>
+			</div>
+			<div class="flex flex-row justify-center items-center gap-3 p-2">
+				<div class="w-[40px]">
+					<Fragment set:html={Github} />
+				</div>
+				<div class="w-[40px]">
+					<Fragment set:html={Linkedin} />
+				</div>
+			</div>
+			<div class="flex flex-row justify-center items-center p-2">
+				<span class="text-accent">Download CV</span>
+			</div>
+		</div>
+		<!-- <div class='mt-2 ta:mt-8 flex flex-col justify-center items-center'>
+			<span class=''>Full Stack Web Developer</span>
+			<span class='font-semibold '>Download CV</span>
+		</div> -->
+		<!-- <div>
+			<div class='flex flex-row w-full h-[55px] gap-2'>
+				<Fragment set:html={Github} />
+				<Fragment set:html={Linkedin} />
+			</div>
+		</div> -->
+	</div>
+</BaseLayout>

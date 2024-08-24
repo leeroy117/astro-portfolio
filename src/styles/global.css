@@ -1,0 +1,9 @@
+@import '@fontsource-variable/manrope';
+@import '@fontsource/monofett';
+@import '@fontsource-variable/baloo-chettan-2';
+@import '@fontsource/poppins'; 
+
+body {
+    margin: 0;
+    padding: 0;
+}

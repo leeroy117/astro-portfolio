@@ -1,0 +1,149 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NextJSIcon from '../img/icons/nextjs.svg';
+import ReactIcon from '../img/icons/react-svgrepo-com.svg';
+import AngularIcon from '../img/icons/angular-simple-svgrepo-com.svg';
+import JSIcon from '../img/icons/js-svgrepo-com.svg';
+import AstroIcon from '../img/icons/astro-svgrepo-com.svg';
+import NodeJSIcon from '../img/icons/node-js-svgrepo-com.svg';
+import NestJSIcon from '../img/icons/nestjs-svgrepo-com.svg';
+import RedisIcon from '../img/icons/redis-svgrepo-com.svg';
+import DockerIcon from '../img/icons/docker-svgrepo-com.svg';
+import PostgresIcon from '../img/icons/postgresql-svgrepo-com.svg';
+import MongoDBIcon from '../img/icons/mongodb-svgrepo-com.svg';
+import PHPIcon from '../img/icons/php02-svgrepo-com.svg';
+import TailwindIcon from '../img/icons/tailwind-svgrepo-com.svg';
+import ReduxIcon from '../img/icons/redux-svgrepo-com.svg';
+import GitIcon from '../img/icons/git-svgrepo-com.svg';
+import SassIcon from '../img/icons/sass-svgrepo-com.svg';
+import AWSIcon from '../img/icons/aws-svgrepo-com.svg';
+const title = 'About';
+let id = 1;
+
+const tools = [
+	{
+		id: id++,
+		name: 'NextJS',
+		icon: NextJSIcon
+	},
+	{
+		id: id++,
+		name: 'React',
+		icon: ReactIcon
+	},
+	{
+		id: id++,
+		name: 'Angular',
+		icon: AngularIcon
+	},
+	{
+		id: id++,
+		name: 'JavaScript',
+		icon: JSIcon
+	},
+	{
+		id: id++,
+		name: 'Astro',
+		icon: AstroIcon
+	},
+	{
+		id: id++,
+		name: 'NodeJS',
+		icon: NodeJSIcon
+	},
+	{
+		id: id++,
+		name: 'NestJS',
+		icon: NestJSIcon
+	},
+	{
+		id: id++,
+		name: 'Redis',
+		icon: RedisIcon
+	},
+	{
+		id: id++,
+		name: 'Docker',
+		icon: DockerIcon
+	},
+	{
+		id: id++,
+		name: 'PostgreSQL',
+		icon: PostgresIcon
+	},
+	{
+		id: id++,
+		name: 'MongoDB',
+		icon: MongoDBIcon
+	},
+	{
+		id: id++,
+		name: 'Php',
+		icon: PHPIcon
+	},
+	{
+		id: id++,
+		name: 'TailwindCSS',
+		icon: TailwindIcon
+	},
+	{
+		id: id++,
+		name: 'Redux',
+		icon: ReduxIcon
+	},
+	{
+		id: id++,
+		name: 'Git',
+		icon: GitIcon
+	},
+	{
+		id: id++,
+		name: 'Sass',
+		icon: SassIcon
+	},
+	{
+		id: id++,
+		name: 'Amazon Web Services',
+		icon: AWSIcon
+	},
+]
+---
+<BaseLayout title={title}>
+	<div class="w-full flex flex-col gap-5">
+		<p class="text-center">Hello! I'm <span class="font-semibold text-accent">Leeroy García</span>, a passionate 
+			<span class="font-semibold text-accent">Full Stack Web Developer</span> full stack web developer with 
+			<span class="text-accent font-bold">3+ years</span> of experience in creating robust 
+			and efficient digital solutions. My focus is on building web applications that are not only functional, 
+			but also attractive and easy to use. Throughout my career, I have had the privilege of working on various projects, 
+			from educational platforms to internal management systems. I am committed to continuous learning and adopting the 
+			latest technologies to deliver high quality products. I'm excited to continue contributing to the world of web 
+			development and take on exciting new challenges!</p>
+	
+		<div class="flex flex-col gap-4 w-full ">
+			<div class="flex flex-row justify-center items-center w-full ">
+				<h5 class="font-extrabold text-2xl "><span class="text-accent">(</span> Tooling <span class="text-accent">)</span></h5>
+			</div>
+
+			<div class="grid sm:grid-cols-[1fr_1fr_1fr] gap-y-2 ">
+				{
+					tools.map((t) => {
+						console.log("🚀 ~ tools.map ~ t:", t);
+						return (<div class="flex flex-col justify-center items-center ">
+							<Image 
+								class={`sm:h-[50px] mm:w-[50px] lm:w-[70px] shadow-sm`}
+								src={t.icon} 
+								alt={'icono nextjs'}
+								widths={[50, 70]}
+								sizes={`(max-width: 360px) 50px, (max-width: 720px) 50px, (max-width: 1600px) 70px`}
+							/>
+							<span class="font-semibold text-xs text-center">{t.name}</span>
+						</div>)
+					})
+				}
+			</div>
+	
+		</div>
+
+	</div>
+</BaseLayout>
